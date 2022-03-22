@@ -25,49 +25,48 @@ export default function Tabela({ users, reload, setReload }) {
   return (
     <>
       <Container>
-
         <h2>Informações dos usuários</h2>
-     
-          <Table variant="primary">
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Estado Civil</th>
-                <th>CPF</th>
-                <th>Cidade</th>
-                <th>UF</th>
-                <th>Editar</th>
+
+        <Table variant="primary">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Estado Civil</th>
+              <th>CPF</th>
+              <th>Cidade</th>
+              <th>UF</th>
+              <th>Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.nome}</td>
+                <td>{user.idade}</td>
+                <td>{user.estadoCivil}</td>
+                <td>{user.cpf}</td>
+                <td>{user.cidade}</td>
+                <td>{user.uf}</td>
+                <td>
+                  <ButtonGroup size="sm">
+                    <Link to={`../formulario/${user.id}`}>
+                      <Button variant="outline-success">Atualizar</Button>
+                    </Link>
+                    <Button
+                      onClick={() => {
+                        handleDeletar(user.id);
+                      }}
+                      variant="outline-danger"
+                    >
+                      Remover
+                    </Button>
+                  </ButtonGroup>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.nome}</td>
-                  <td>{user.idade}</td>
-                  <td>{user.estadoCivil}</td>
-                  <td>{user.cpf}</td>
-                  <td>{user.cidade}</td>
-                  <td>{user.uf}</td>
-                  <td>
-                    <ButtonGroup size="sm">
-                      <Link to={`../formulario/${user.id}`}>
-                        <Button variant="outline-success">Atualizar</Button>
-                      </Link>
-                      <Button
-                        onClick={() => {
-                          handleDeletar(user.id);
-                        }}
-                        variant="outline-danger"
-                      >
-                        Remover
-                      </Button>
-                    </ButtonGroup>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
+            ))}
+          </tbody>
+        </Table>
         <Link to="/formulario">
           <Button>Adicionar cadastro</Button>
         </Link>

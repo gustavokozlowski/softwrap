@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-import Home from './pages/Home';
-import Formulario from './pages/Formulario';
+import Home from "./pages/Home";
+import Formulario from "./pages/Formulario";
 
 export default function Rotas() {
   return (
@@ -15,5 +12,4 @@ export default function Rotas() {
       <Route path="/formulario/:idUsuario" element={<Formulario />} />
     </Routes>
   );
-};
-
+}
