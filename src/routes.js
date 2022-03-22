@@ -7,7 +7,7 @@ import {
 import Home from './pages/Home';
 import Formulario from './pages/Formulario';
 
-function Rotas() {
+export default function Rotas() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -17,4 +17,3 @@ function Rotas() {
   );
 };
 
-export default Rotas;
