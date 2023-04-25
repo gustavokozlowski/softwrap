@@ -18,8 +18,7 @@ export default function FormCliente({
   handleSubmit,
 }) {
   return (
-    <>
-      <Container>
+      <Container className="mb-3">
         <h3>Formulário</h3>
         <FloatingLabel controlId="floatingInput" label="Nome" className="mb-3">
           <Form.Control
@@ -86,6 +85,6 @@ export default function FormCliente({
           </Stack>
         </Link>
       </Container>
-    </>
+    
   );
 }
