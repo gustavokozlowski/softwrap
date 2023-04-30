@@ -1,5 +1,8 @@
 import React from "react";
 import { ButtonGroup, Button, Container } from "react-bootstrap";
+import {
+  ButtonAdd
+} from "./styles";
 import { Link } from "react-router-dom";
 import { deleteDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -77,10 +80,10 @@ export default function Tabela({ users, reload, setReload }) {
           </tbody>
         </table>
         <Link to="/formulario">
-          <Button>
+          <ButtonAdd>
             adicionar
             <PersonFillAdd />
-          </Button>
+          </ButtonAdd>
         </Link>
       </Container>
     </>

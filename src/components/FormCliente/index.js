@@ -72,7 +72,7 @@ export default function FormCliente({
             placeholder="UF"
           />
           <Button onClick={handleSubmit} type="submit">
-            salvar
+            adicionar
           </Button>
         </Main>
       </Form>

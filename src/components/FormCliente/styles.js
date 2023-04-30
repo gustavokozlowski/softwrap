@@ -77,6 +77,7 @@ export const Button = styled.button`
   box-shadow: 2px 2px black;
   align-self: center;
   &:hover {
+      background-color: #eee;
   }
   &:active {
     box-shadow: none;
