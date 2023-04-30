@@ -53,7 +53,9 @@ export default function Formulario() {
         updateUser(idUsuario, user);
         navigate("../");
 
-        toast.success("Usuario atualizado com sucesso!");
+        toast.success("Usuario atualizado com sucesso!", {
+          theme: "light"
+        });
       } catch (e) {
         toast.error(`Erro ao atualizar usuario: ${e.message}`);
       }

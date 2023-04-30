@@ -19,7 +19,8 @@ export default function Tabela({ users, reload, setReload }) {
     try {
       const userDoc = doc(db, "usuarios", id);
       await deleteDoc(userDoc);
-      toast.success("Usuario removido com sucesso!");
+      toast.success("Usuario removido com sucesso!", {
+      });
     } catch (e) {
       toast.error(`Erro ao remover usuario: ${e.message}`);
     }

@@ -10,7 +10,7 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Routes />
-      <ToastContainer autoClose={3000} />
+      <ToastContainer position="bottom-left" theme="light" autoClose={3000} />
     </BrowserRouter>
   );
 }
