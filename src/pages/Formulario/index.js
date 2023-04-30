@@ -90,7 +90,7 @@ export default function Formulario() {
     };
 
     getUsers();
-  }, []);
+  }, [editar, params?.idUsuario, usersCollectionRef]);
 
   return (
     <>

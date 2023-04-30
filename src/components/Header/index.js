@@ -5,7 +5,7 @@ export default function Header(){
 
     return(
         <Container>
-            <h1>SoftWrap</h1>
+            <h1>softwrap</h1>
         </Container>
     )
 }

@@ -1,8 +1,13 @@
 import React from "react";
-import { Table, ButtonGroup, Button, Container } from "react-bootstrap";
+import { ButtonGroup, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { deleteDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import {
+  PersonDashFill,
+  PencilSquare,
+  PersonFillAdd,
+} from "react-bootstrap-icons";
 
 import { db } from "../../firebase.config";
 
@@ -24,10 +29,10 @@ export default function Tabela({ users, reload, setReload }) {
 
   return (
     <>
-      <Container>
-        <h2>Informações dos usuários</h2>
+      <Container className="container-fluid text-center p-3">
+        <h2 className="text-start">Usuários cadastrados</h2>
 
-        <Table variant="primary">
+        <table className="container table border border-3 border-dark table-primary">
           <thead>
             <tr>
               <th>Nome</th>
@@ -51,24 +56,31 @@ export default function Tabela({ users, reload, setReload }) {
                 <td>
                   <ButtonGroup size="sm">
                     <Link to={`../formulario/${user.id}`}>
-                      <Button variant="outline-success">Atualizar</Button>
+                      <Button size="sm" variant="outline-success">
+                        Atualizar <PencilSquare />
+                      </Button>
                     </Link>
                     <Button
+                      className="ms-2"
+                      size="sm"
                       onClick={() => {
                         handleDeletar(user.id);
                       }}
                       variant="outline-danger"
                     >
-                      Remover
+                      Deletar <PersonDashFill />
                     </Button>
                   </ButtonGroup>
                 </td>
               </tr>
             ))}
           </tbody>
-        </Table>
+        </table>
         <Link to="/formulario">
-          <Button>Adicionar cadastro</Button>
+          <Button>
+            adicionar
+            <PersonFillAdd />
+          </Button>
         </Link>
       </Container>
     </>

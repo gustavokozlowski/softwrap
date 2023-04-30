@@ -1,6 +1,13 @@
 import React from "react";
-import { Form, Button, FloatingLabel, Container, Stack } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {
+  ContainerForm,
+  Input,
+  Form,
+  Label,
+  Title,
+  Main,
+  Button,
+} from "./styles";
 
 export default function FormCliente({
   idade,
@@ -18,73 +25,57 @@ export default function FormCliente({
   handleSubmit,
 }) {
   return (
-      <Container className="mb-3">
-        <h3>Formulário</h3>
-        <FloatingLabel controlId="floatingInput" label="Nome" className="mb-3">
-          <Form.Control
+    <ContainerForm>
+      <Form>
+        <Main>
+          <Title>Formulário</Title>
+          <Label>Nome</Label>
+          <Input
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             type="text"
             placeholder="Nome"
           />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingIdade" label="Idade" className="mb-3">
-          <Form.Control
+          <Label>Idade</Label>
+          <Input
             value={idade}
             onChange={(e) => setIdade(e.target.value)}
             type="number"
             placeholder="Idade"
           />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingCpf" label="CPF" className="mb-3">
-          <Form.Control
+          <Label>CPF</Label>
+          <Input
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
-            type="text"
+            type="number"
             placeholder="CPF"
           />
-        </FloatingLabel>
-        <FloatingLabel
-          controlId="floatingEstadoCivil"
-          label="Estado Civil"
-          className="mb-3"
-        >
-          <Form.Control
+          <Label>Estado civil</Label>
+          <Input
             value={estadoCivil}
             onChange={(e) => setEstadoCivil(e.target.value)}
             type="text"
             placeholder="Estado Civil"
           />
-        </FloatingLabel>
-        <FloatingLabel
-          controlId="floatingCidade"
-          label="Cidade"
-          className="mb-3"
-        >
-          <Form.Control
+          <Label>Cidade</Label>
+          <Input
             value={cidade}
             onChange={(e) => setCidade(e.target.value)}
             type="text"
             placeholder="Cidade"
           />
-        </FloatingLabel>
-        <FloatingLabel controlId="floatingEStado" label="UF">
-          <Form.Control
+          <Label>UF</Label>
+          <Input
             value={uf}
             onChange={(e) => setUf(e.target.value)}
             type="text"
             placeholder="UF"
           />
-        </FloatingLabel>
-
-        <Link to="/">
-          <Stack gap={5} className="col-md-2 mx-auto">
-            <Button onClick={handleSubmit} type="submit">
-              Enviar
-            </Button>
-          </Stack>
-        </Link>
-      </Container>
-    
+          <Button onClick={handleSubmit} type="submit">
+            salvar
+          </Button>
+        </Main>
+      </Form>
+    </ContainerForm>
   );
 }

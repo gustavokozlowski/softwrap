@@ -18,7 +18,7 @@ export default function Home() {
     };
 
     getUsers();
-  }, [reload]);
+  }, [usersCollectionRef]);
 
   return <Tabela users={users} reload={reload} setReload={setReload} />;
 }
